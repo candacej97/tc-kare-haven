@@ -36,3 +36,7 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+#signUpModal > .modal-content {
+  margin: 10% auto;
+}
