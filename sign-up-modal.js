@@ -13,7 +13,6 @@ let openModal = function() {
         modal.style.display = "block";
     };
 }
-
 // funtion to close modal
 let closeModal = function() {
     modal ? modal.style.display = "none" : null;
