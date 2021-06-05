@@ -44,8 +44,8 @@ function getFormData(form) {
 
   // add form-specific values into the data
   formData.formDataNameOrder = JSON.stringify(fields);
-  formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
-  formData.formGoogleSendEmail = form.dataset.emailInput || ""; // no email by default
+  formData.formGoogleSheetName = form.dataset.sheet || "TC Kare Haven"; // default sheet name
+  formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
 
   data = formData;
   return {data: formData, honeypot: honeypot};
