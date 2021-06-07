@@ -1,3 +1,5 @@
+html {width: 100%;}
+
 img {
     width: 100%;
 }
@@ -23,8 +25,20 @@ h4 {
     letter-spacing: 0.2rem;
 }
 
+.serve-categories {
+    overflow: hidden;
+}
+
+.serve-categories img {
+    /* height: 20rem; */
+    /* width: -webkit-fill-available; */
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+}
+
 .more-details > div > img {
-    height: 300px;
+    height: 20rem;
 }
 
 .low-price {
@@ -68,5 +82,26 @@ textarea {
         position: fixed;
         bottom: 0px;
         width: 100%;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    header ul {
+        margin-right: 2rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .comfort {
+        margin: revert;
+    }
+    
+    .low-price div {
+        width: inherit;
+    }
+
+    .serve-categories img {
+        height: 20rem;
+        width: auto;
     }
 }
