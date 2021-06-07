@@ -52,6 +52,7 @@ function getFormData(form) {
 }
 
 function handleFormSubmit(event) {  // handles form submit without any jquery
+  console.log('form submitted');
   event.preventDefault();           // we are submitting via xhr below
   var form = event.target;
   var formData = getFormData(form);
@@ -69,16 +70,19 @@ function handleFormSubmit(event) {  // handles form submit without any jquery
   // xhr.withCredentials = true;
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function() {
-    console.log(xhr.readyState);
-    console.log(xhr.status);
+    // console.log(xhr.readyState);
+    // console.log(xhr.status);
       if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log('reset form');
         form.reset();
         var formElements = document.querySelector("form");
         if (formElements) {
+          console.log('form reset');
           formElements.style.display = "none"; // hide form
         }
         var thankYouMessage = document.querySelector("#thankyou_message");
         if (thankYouMessage) {
+          console.log('set message');
           thankYouMessage.style.display = "block";
         }
       }
@@ -93,6 +97,7 @@ function handleFormSubmit(event) {  // handles form submit without any jquery
 function loaded() {
   // bind to the submit event of our form
   var forms = document.querySelectorAll("form.gform");
+  console.log('form loaded');
   for (var i = 0; i < forms.length; i++) {
     forms[i].addEventListener("submit", handleFormSubmit, false);
   }

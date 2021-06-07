@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./modal.css">
-    <script type="text/javascript" src="./sign-up-modal.js" onload="console.log('js loaded');"></script>
+    <script type="text/javascript" src="./sign-up-modal.js"></script>
 
     <title>T&C Kare Haven, LLC</title>
   </head>
@@ -24,7 +24,7 @@
           <span class="fs-4">T&C Kare Haven</span>
         </a>
   
-        <ul class="nav nav-pills mr-2">
+        <ul class="nav nav-pills ml-2">
           <li class="nav-item"><a href="./" class="nav-link active" aria-current="page">Home</a></li>
           <li class="nav-item"><a href="./contact-us/" class="nav-link">Contact Us</a></li>
           <!-- <li class="nav-item"><a href="./refer/" class="nav-link">Refer Here</a></li> -->
@@ -32,7 +32,7 @@
       </header>
     </div>
 
-    <div class="container bg-light">
+    <div class="container bg-light pt-2 pb-2">
         <div class="row g-0">
           <div class="col-md-6 col-sm-12 totally-center">
             <h1>A Sure Place of Comfort</h1>
@@ -60,7 +60,7 @@
 
     <h1 class="totally-center serve-message">We are here to serve you!</h1>
 
-    <div class="container">
+    <div class="container serve-categories">
       <div class="row">
         <div class="col-md-4 col-sm-1">
           <img src="./assets/veterans.png" alt="Veterans">
@@ -95,38 +95,44 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close" onclick="closeModal();">&times;</span>
+          <span class="close" onclick="closeModal();">&times;</span>
 
-            <form action="https://google.com" method="post" target="_self" autocomplete="on">
-              <div class="mb-3"> <!-- First Name -->
-                  <label for="firstName" class="form-label">First Name</label>
-                  <input type="text" class="form-control" id="firstName" required>
-              </div>
-              <div class="mb-3"> <!-- Last Name -->
-                  <label for="lastName" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" id="lastName" required>
-              </div>
-              <div class="mb-3"> <!-- Email -->
-                <label for="emailInput" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" required>
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-              </div>
-              <div class="mb-3"> <!-- Phone number -->
-                <label for="numberInput" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="numberInput" aria-describedby="phoneHelp" required>
-                <div id="phoneHelp" class="form-text">We'll never share your phone number with anyone else.</div>
-              </div>
-              <div class="mb-3"> <!-- Date -->
-                <label for="moveDate" class="form-label">Requested Move-In Date</label>
-                <input type="date" class="form-control" id="moveDate" required>
-              </div>
+          <h3 class="text-center">Request Room</h3>
+
+          <form class="gform form-elements" id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbyRKWRG9bhbhKzAOCmk5lWz46lVAeDwvZqMnsTsA54fPHRcjzPTReNikkMv3gJuGWWGXw/exec">
+            <fieldset disabled="disabled" style="visibility: hidden;">
+              <input type="text" name="form" id="" value="Booking Request">
+            </fieldset>
+            <div class="mb-3"> <!-- Name -->
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3"> <!-- Email -->
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3"> <!-- Phone number -->
+              <label for="numberInput" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="numberInput" aria-describedby="phoneHelp" name="number" required>
+              <div id="phoneHelp" class="form-text">We'll never share your phone number with anyone else.</div>
+            </div>
+            <div class="mb-3"> <!-- Date -->
+              <label for="moveDate" class="form-label">Requested Move-In Date</label>
+              <input type="date" class="form-control" id="moveDate" name="date" required>
+            </div>
               
-              <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
-              <!-- todo connect to a google form -->
-            </form>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Request</button>
+          </form>
+
+          <!-- Customize confirmation message -->
+          <div style="display:none;margin:10%;" id="thankyou_message" class="totally-center">
+            <h4>Thanks for requesting a room!</h4>
+            <h4>We will get back to you soon.</h4>
+          </div>
         </div>
       </div>
-  
+
     <footer class="footer mt-auto py-3 bg-light">
       <div class="container">
         <span>Call us for more information:</span>
@@ -137,5 +143,6 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper todo remove js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script data-cfasync="false" type="text/javascript" src="./form.js"></script>
   </body>
 </html>
